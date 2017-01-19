@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89A689B71E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */; };
+		89A689BA1E306CF30043B9F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689B91E306CF30043B9F6 /* Track.swift */; };
+		89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BB1E306EC70043B9F6 /* TrackModel.swift */; };
+		89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BE1E307D8B0043B9F6 /* TrackListController.swift */; };
+		89A689C51E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */; };
+		89A689C61E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */; };
+		89A689C71E30BC710043B9F6 /* 薛之谦 - 演员.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */; };
+		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
 		89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A141E2E271E00659DE9 /* AppDelegate.swift */; };
 		89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A161E2E271E00659DE9 /* ViewController.swift */; };
 		89CE0A1A1E2E271E00659DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CE0A181E2E271E00659DE9 /* Main.storyboard */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Machine Gun Kelly, Camila Cabello - Bad Things.mp3"; sourceTree = "<group>"; };
+		89A689B91E306CF30043B9F6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		89A689BB1E306EC70043B9F6 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
+		89A689BE1E307D8B0043B9F6 /* TrackListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListController.swift; sourceTree = "<group>"; };
+		89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "孙子涵 - 唐人.mp3"; sourceTree = "<group>"; };
+		89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "林宥嘉-残酷月光.mp3"; sourceTree = "<group>"; };
+		89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "薛之谦 - 演员.mp3"; sourceTree = "<group>"; };
+		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
 		89CE0A111E2E271E00659DE9 /* SwiftMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A141E2E271E00659DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CE0A161E2E271E00659DE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +90,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89A689B81E306CD70043B9F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89A689B91E306CF30043B9F6 /* Track.swift */,
+				89A689BB1E306EC70043B9F6 /* TrackModel.swift */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		89A689BD1E307D690043B9F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89A689BE1E307D8B0043B9F6 /* TrackListController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		89B099181E2E69F100EC8F7F /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */,
+				89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */,
+				89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */,
+				89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */,
+			);
+			name = Tracks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		89CE0A081E2E271E00659DE9 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +143,13 @@
 		89CE0A131E2E271E00659DE9 /* SwiftMusic */ = {
 			isa = PBXGroup;
 			children = (
+				89A689BD1E307D690043B9F6 /* Controller */,
 				89CE0A141E2E271E00659DE9 /* AppDelegate.swift */,
 				89CE0A161E2E271E00659DE9 /* ViewController.swift */,
 				89CE0A181E2E271E00659DE9 /* Main.storyboard */,
+				89CE0A421E2E5F4D00659DE9 /* Cell */,
+				89A689B81E306CD70043B9F6 /* Model */,
+				89B099181E2E69F100EC8F7F /* Tracks */,
 				89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */,
 				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
 				89CE0A201E2E271E00659DE9 /* Info.plist */,
@@ -123,6 +173,14 @@
 				89CE0A361E2E271E00659DE9 /* Info.plist */,
 			);
 			path = SwiftMusicUITests;
+			sourceTree = "<group>";
+		};
+		89CE0A421E2E5F4D00659DE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				89C672511E2FC61D0064F1ED /* TracksListCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +295,11 @@
 			files = (
 				89CE0A1F1E2E271E00659DE9 /* LaunchScreen.storyboard in Resources */,
 				89CE0A1C1E2E271E00659DE9 /* Assets.xcassets in Resources */,
+				89A689B71E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 in Resources */,
+				89A689C61E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 in Resources */,
 				89CE0A1A1E2E271E00659DE9 /* Main.storyboard in Resources */,
+				89A689C71E30BC710043B9F6 /* 薛之谦 - 演员.mp3 in Resources */,
+				89A689C51E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +325,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */,
+				89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */,
 				89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */,
+				89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */,
+				89A689BA1E306CF30043B9F6 /* Track.swift in Sources */,
+				89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +580,7 @@
 				89CE0A3B1E2E271E00659DE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89CE0A3C1E2E271E00659DE9 /* Build configuration list for PBXNativeTarget "SwiftMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +589,7 @@
 				89CE0A3E1E2E271E00659DE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89CE0A3F1E2E271E00659DE9 /* Build configuration list for PBXNativeTarget "SwiftMusicUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +598,7 @@
 				89CE0A411E2E271E00659DE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

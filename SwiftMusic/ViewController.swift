@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("Start")
+        
+        TrackModel.getTracks { (models : [Track]) in
+            print(models)
+            
+            
+        }
+        
+        /*let documentUrl = FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!
+        
+        
+        do {
+            let contents = try FileManager.default.contentsOfDirectory(at: documentUrl, includingPropertiesForKeys: nil, options: [])
+            let mp3s = contents.filter{$0.pathExtension == "mp3"}
+            print("mp3 urls: ",mp3s)
+        }catch let error {
+            print(error)
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
