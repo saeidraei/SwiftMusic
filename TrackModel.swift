@@ -53,7 +53,7 @@ class TrackModel: NSObject {
                         }
                     }
                 }
-                let track = Track(title: title, artist: artist)
+                let track = Track(title: title, artist: artist, fileName: path)
                 tracks.append(track)
             }
             print("Tracks: \(tracks.count)")

@@ -14,6 +14,8 @@
 		89A689C51E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */; };
 		89A689C61E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */; };
 		89A689C71E30BC710043B9F6 /* 薛之谦 - 演员.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */; };
+		89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689C91E3109070043B9F6 /* TrackTool.swift */; };
+		89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */; };
 		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
 		89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A141E2E271E00659DE9 /* AppDelegate.swift */; };
 		89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A161E2E271E00659DE9 /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 		89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "孙子涵 - 唐人.mp3"; sourceTree = "<group>"; };
 		89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "林宥嘉-残酷月光.mp3"; sourceTree = "<group>"; };
 		89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "薛之谦 - 演员.mp3"; sourceTree = "<group>"; };
+		89A689C91E3109070043B9F6 /* TrackTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTool.swift; sourceTree = "<group>"; };
+		89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMessage.swift; sourceTree = "<group>"; };
 		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
 		89CE0A111E2E271E00659DE9 /* SwiftMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A141E2E271E00659DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				89A689B91E306CF30043B9F6 /* Track.swift */,
 				89A689BB1E306EC70043B9F6 /* TrackModel.swift */,
+				89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -106,6 +111,15 @@
 				89A689BE1E307D8B0043B9F6 /* TrackListController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		89A689C81E3108EE0043B9F6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				89A689C91E3109070043B9F6 /* TrackTool.swift */,
+			);
+			name = Tools;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		89B099181E2E69F100EC8F7F /* Tracks */ = {
@@ -149,6 +163,7 @@
 				89CE0A181E2E271E00659DE9 /* Main.storyboard */,
 				89CE0A421E2E5F4D00659DE9 /* Cell */,
 				89A689B81E306CD70043B9F6 /* Model */,
+				89A689C81E3108EE0043B9F6 /* Tools */,
 				89B099181E2E69F100EC8F7F /* Tracks */,
 				89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */,
 				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
@@ -324,12 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */,
 				89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */,
 				89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */,
 				89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */,
 				89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */,
 				89A689BA1E306CF30043B9F6 /* Track.swift in Sources */,
 				89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */,
+				89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

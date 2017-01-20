@@ -11,7 +11,7 @@ import UIKit
 class TracksListCell: UITableViewCell {
     @IBOutlet weak var trackTitle: UILabel!
     @IBOutlet weak var artist: UILabel!
-    @IBOutlet weak var trackImage: UIImageView!
+   // @IBOutlet weak var trackImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +31,7 @@ class TracksListCell: UITableViewCell {
         
         
 
-            trackImage.image = UIImage(named: "albumArt")
+        //trackImage.image = UIImage(named: "albumArt")
 
     }
     
@@ -40,6 +40,6 @@ class TracksListCell: UITableViewCell {
         
         trackTitle.text  = nil
         trackTitle.text  = nil
-        trackImage.image = nil
+        //trackImage.image = nil
     }
 }
