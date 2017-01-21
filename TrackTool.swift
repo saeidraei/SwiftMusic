@@ -9,6 +9,8 @@
 import UIKit
 import MediaPlayer
 
+let trackFinish = "trackFinish"
+
 class TrackTool: NSObject , AVAudioPlayerDelegate{
     var trackPlayer: AVAudioPlayer?
     static let shareInstance = TrackTool()
@@ -83,4 +85,7 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
         playTrack(track: track)
     }
     
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: trackFinish), object: self, userInfo: nil)
+    }
 }

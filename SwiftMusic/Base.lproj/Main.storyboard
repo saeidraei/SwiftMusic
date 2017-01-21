@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ARm-kB-pcd" id="z7q-il-Qp8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xje-jX-9Mm">
@@ -112,22 +112,22 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RR-O3-n7C">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RR-O3-n7C">
                                         <rect key="frame" x="369" y="18" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="R3E-wm-rLh"/>
                                         </constraints>
-                                        <state key="normal" title="N"/>
+                                        <state key="normal" title="N" image="nextbtn"/>
                                         <connections>
                                             <action selector="nextTrack:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="eYK-oI-IxX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-l1-dp7">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-l1-dp7">
                                         <rect key="frame" x="335" y="18" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="cSi-8a-88R"/>
                                         </constraints>
-                                        <state key="normal" title="P"/>
+                                        <state key="normal" title="P" image="playbtn"/>
                                         <connections>
                                             <action selector="PlayPause:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="ZtU-nZ-6ey"/>
                                         </connections>
@@ -154,7 +154,7 @@
                                     <constraint firstItem="Z6O-oZ-IVv" firstAttribute="top" secondItem="3fe-M2-HxX" secondAttribute="bottom" constant="3" id="zD8-d2-nOa"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="513-hv-SIo">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="513-hv-SIo">
                                 <rect key="frame" x="0.0" y="674" width="414" height="2"/>
                             </progressView>
                         </subviews>
@@ -212,5 +212,7 @@
     </scenes>
     <resources>
         <image name="albumArt" width="180" height="180"/>
+        <image name="nextbtn" width="180" height="180"/>
+        <image name="playbtn" width="180" height="180"/>
     </resources>
 </document>

@@ -19,8 +19,11 @@ class TrackListController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    
     var tracks = [Track]()
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -33,6 +36,9 @@ class TrackListController: UIViewController {
         tableView.backgroundView = nil
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         setupPullToRefresh()
+        
+        // Auto play next track when current track is finish
+        NotificationCenter.default.addObserver(self, selector: #selector(nextTrack(_:)), name: NSNotification.Name(rawValue: trackFinish), object: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,10 +104,21 @@ class TrackListController: UIViewController {
     
     // MARK: - ProgressView Setting
     func setupProgressView() {
-        let track = TrackTool.shareInstance.getTrackMessage()
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
-        //let progressValue = Float(track1.costTime / track1.totalTime)
-        progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: false)
+        
+//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
+//        //let progressValue = Float(track1.costTime / track1.totalTime)
+//        progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: false)
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
+            timer in
+            let track = TrackTool.shareInstance.getTrackMessage()
+            print("isPlaying \(track.isPlaying)")
+            if track.isPlaying {
+                print(track.currentTime, track.totalTime)
+                self.progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: true)
+            } else {
+                return
+            }
+        }
     }
     
     func updateProgress() {
