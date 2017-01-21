@@ -18,6 +18,7 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
     var tracks: [Track] = [Track]()
     var trackIndex = -1 {
         didSet {
+            print("SASASASSASASASASASAS")
             if trackIndex < 0 {
                 trackIndex = tracks.count - 1
             }
@@ -73,6 +74,11 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
 
         trackPlayer?.prepareToPlay()
         trackPlayer?.play()
+    }
+    
+    func playCurrnetTrack () {
+        let track = tracks[trackIndex]
+        playTrack(track: track)
     }
     
     func pauseTrack() -> () {

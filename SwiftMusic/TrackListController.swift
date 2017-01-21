@@ -18,6 +18,9 @@ class TrackListController: UIViewController {
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var nowPlayingView: UIView!
+    
+    var nowPlaying : CADisplayLink?
     
     var tracks = [Track]()
     
@@ -28,7 +31,8 @@ class TrackListController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //nowPlaying?.isPaused = true
+        nowPlayingView.isHidden = true
         loadTracks()
         TrackTool.shareInstance.tracks = tracks
         
@@ -129,11 +133,25 @@ class TrackListController: UIViewController {
     }
     
     // MARK: - IBActions
-    @IBAction func playPause(_ sender: Any) {
+    @IBAction func playPause(_ sender: AnyObject) {
+        let button : UIButton = sender as! UIButton
+        button.isSelected = !sender.isSelected
         
+        if button.isSelected {
+            //self.resumeForeImageViewAnimation()
+            playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
+            TrackTool.shareInstance.playCurrnetTrack()
+            //nowPlaying?.isPaused = false
+        } else {
+            //self.pauseForeImageViewAnimation()
+            playPauseBtn.setImage(UIImage(named: "playbtn"), for: .normal)
+            TrackTool.shareInstance.pauseTrack()
+            //nowPlaying?.isPaused = true
+        }
     }
     
     @IBAction func nextTrack(_ sender: Any) {
+        playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
         TrackTool.shareInstance.nextTrack()
         updateTrackMessage()
     }

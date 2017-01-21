@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.1175440177" green="0.11671449239999999" blue="0.1412996352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9G9-EF-rqL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9G9-EF-rqL">
                                 <rect key="frame" x="0.0" y="64" width="414" height="610"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ARm-kB-pcd" id="z7q-il-Qp8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xje-jX-9Mm">
@@ -82,9 +82,13 @@
                                     <outlet property="delegate" destination="OzQ-mY-bYs" id="5zY-GW-oO2"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRD-Hc-dDU">
-                                <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRD-Hc-dDU">
+                                <rect key="frame" x="0.0" y="676" width="414" height="62"/>
                                 <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="513-hv-SIo">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </progressView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumArt" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-KT-Yyc">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <constraints>
@@ -122,14 +126,14 @@
                                             <action selector="nextTrack:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="eYK-oI-IxX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-l1-dp7">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-l1-dp7">
                                         <rect key="frame" x="335" y="18" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="cSi-8a-88R"/>
                                         </constraints>
-                                        <state key="normal" title="P" image="playbtn"/>
+                                        <state key="normal" image="pausebtn"/>
                                         <connections>
-                                            <action selector="PlayPause:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="ZtU-nZ-6ey"/>
+                                            <action selector="playPause:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="kq7-TD-Cg8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -154,24 +158,17 @@
                                     <constraint firstItem="Z6O-oZ-IVv" firstAttribute="top" secondItem="3fe-M2-HxX" secondAttribute="bottom" constant="3" id="zD8-d2-nOa"/>
                                 </constraints>
                             </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="513-hv-SIo">
-                                <rect key="frame" x="0.0" y="674" width="414" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="513-hv-SIo" firstAttribute="top" secondItem="9G9-EF-rqL" secondAttribute="bottom" id="0Wk-II-gYf"/>
                             <constraint firstAttribute="trailing" secondItem="p07-hg-obm" secondAttribute="trailing" id="0nG-22-jsm"/>
-                            <constraint firstAttribute="trailing" secondItem="513-hv-SIo" secondAttribute="trailing" id="1bk-u8-yA0"/>
                             <constraint firstItem="p07-hg-obm" firstAttribute="top" secondItem="3zu-Xm-g5H" secondAttribute="top" id="BXq-mw-Lwt"/>
-                            <constraint firstItem="513-hv-SIo" firstAttribute="leading" secondItem="3zu-Xm-g5H" secondAttribute="leading" id="D99-Iy-BZp"/>
                             <constraint firstItem="p07-hg-obm" firstAttribute="leading" secondItem="3zu-Xm-g5H" secondAttribute="leading" id="HQr-po-xcF"/>
                             <constraint firstAttribute="trailing" secondItem="WRD-Hc-dDU" secondAttribute="trailing" id="Lts-lB-Ke1"/>
                             <constraint firstItem="BaL-dG-JWL" firstAttribute="top" secondItem="WRD-Hc-dDU" secondAttribute="bottom" id="M05-iI-74a"/>
                             <constraint firstItem="9G9-EF-rqL" firstAttribute="top" secondItem="WLd-Zu-zZI" secondAttribute="bottom" id="PTn-zd-69N"/>
                             <constraint firstItem="BaL-dG-JWL" firstAttribute="top" secondItem="p07-hg-obm" secondAttribute="bottom" id="bbs-V0-xYo"/>
                             <constraint firstItem="9G9-EF-rqL" firstAttribute="leading" secondItem="3zu-Xm-g5H" secondAttribute="leading" id="f0A-4z-qgX"/>
-                            <constraint firstItem="WRD-Hc-dDU" firstAttribute="top" secondItem="513-hv-SIo" secondAttribute="bottom" id="kdg-KU-DdH"/>
                             <constraint firstAttribute="trailing" secondItem="9G9-EF-rqL" secondAttribute="trailing" id="owS-72-a8l"/>
                             <constraint firstItem="WRD-Hc-dDU" firstAttribute="leading" secondItem="3zu-Xm-g5H" secondAttribute="leading" id="sYM-HI-TT5"/>
                         </constraints>
@@ -182,6 +179,7 @@
                         <outlet property="currentImage" destination="Zga-KT-Yyc" id="CZb-KZ-U3c"/>
                         <outlet property="currentTrack" destination="3fe-M2-HxX" id="m0G-fO-rkC"/>
                         <outlet property="nextBtn" destination="0RR-O3-n7C" id="85B-KJ-eBw"/>
+                        <outlet property="nowPlayingView" destination="WRD-Hc-dDU" id="N7N-Qj-rpp"/>
                         <outlet property="playPauseBtn" destination="LjL-l1-dp7" id="qkX-ks-O5i"/>
                         <outlet property="progressBar" destination="513-hv-SIo" id="pRw-kK-rCC"/>
                         <outlet property="tableView" destination="9G9-EF-rqL" id="aWh-D5-6Bm"/>
@@ -213,6 +211,6 @@
     <resources>
         <image name="albumArt" width="180" height="180"/>
         <image name="nextbtn" width="180" height="180"/>
-        <image name="playbtn" width="180" height="180"/>
+        <image name="pausebtn" width="180" height="180"/>
     </resources>
 </document>
