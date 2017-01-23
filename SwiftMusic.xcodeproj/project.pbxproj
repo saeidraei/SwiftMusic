@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; };
 		89A689B71E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */; };
 		89A689BA1E306CF30043B9F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689B91E306CF30043B9F6 /* Track.swift */; };
 		89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BB1E306EC70043B9F6 /* TrackModel.swift */; };
@@ -24,6 +25,9 @@
 		89CE0A1F1E2E271E00659DE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */; };
 		89CE0A2A1E2E271E00659DE9 /* SwiftMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A291E2E271E00659DE9 /* SwiftMusicTests.swift */; };
 		89CE0A351E2E271E00659DE9 /* SwiftMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */; };
+		89D568741E35C03A00F3C4AD /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D568731E35C03A00F3C4AD /* TimeFormat.swift */; };
+		89DAC14A1E33A55700D24A3D /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */; };
+		89DAC14C1E33AD7600D24A3D /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAC14B1E33AD7600D24A3D /* PopUpController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09736CC14B59BFD683687A74 /* Pods-SwiftMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic.release.xcconfig"; sourceTree = "<group>"; };
 		89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Machine Gun Kelly, Camila Cabello - Bad Things.mp3"; sourceTree = "<group>"; };
 		89A689B91E306CF30043B9F6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		89A689BB1E306EC70043B9F6 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
@@ -67,6 +72,11 @@
 		89CE0A301E2E271E00659DE9 /* SwiftMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMusicUITests.swift; sourceTree = "<group>"; };
 		89CE0A361E2E271E00659DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D568731E35C03A00F3C4AD /* TimeFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
+		89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
+		89DAC14B1E33AD7600D24A3D /* PopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
+		8B2CDA0B02B4521331E4109A /* Pods-SwiftMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +105,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EE1C594BF68D531FA9B0AE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B2CDA0B02B4521331E4109A /* Pods-SwiftMusic.debug.xcconfig */,
+				09736CC14B59BFD683687A74 /* Pods-SwiftMusic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D8C3242DA2CFD92F8357CDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89A689B81E306CD70043B9F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				89A689BE1E307D8B0043B9F6 /* TrackListController.swift */,
+				89DAC14B1E33AD7600D24A3D /* PopUpController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -117,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				89A689C91E3109070043B9F6 /* TrackTool.swift */,
+				89D568731E35C03A00F3C4AD /* TimeFormat.swift */,
 			);
 			name = Tools;
 			path = ..;
@@ -141,6 +171,8 @@
 				89CE0A281E2E271E00659DE9 /* SwiftMusicTests */,
 				89CE0A331E2E271E00659DE9 /* SwiftMusicUITests */,
 				89CE0A121E2E271E00659DE9 /* Products */,
+				4EE1C594BF68D531FA9B0AE5 /* Pods */,
+				7D8C3242DA2CFD92F8357CDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +200,7 @@
 				89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */,
 				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
 				89CE0A201E2E271E00659DE9 /* Info.plist */,
+				89DAC1481E33A53700D24A3D /* Libraries */,
 			);
 			path = SwiftMusic;
 			sourceTree = "<group>";
@@ -198,6 +231,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		89DAC1481E33A53700D24A3D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */,
+			);
+			name = Libraries;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89CE0A391E2E271E00659DE9 /* Build configuration list for PBXNativeTarget "SwiftMusic" */;
 			buildPhases = (
+				B3B979E80EC041B86103D8C7 /* [CP] Check Pods Manifest.lock */,
 				89CE0A0D1E2E271E00659DE9 /* Sources */,
 				89CE0A0E1E2E271E00659DE9 /* Frameworks */,
 				89CE0A0F1E2E271E00659DE9 /* Resources */,
+				F4A947DC605F82F30E60C85F /* [CP] Embed Pods Frameworks */,
+				E46ABDE4D85F0ADB894921D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,11 +379,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B3B979E80EC041B86103D8C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E46ABDE4D85F0ADB894921D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4A947DC605F82F30E60C85F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89CE0A0D1E2E271E00659DE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D568741E35C03A00F3C4AD /* TimeFormat.swift in Sources */,
+				89DAC14A1E33A55700D24A3D /* MarqueeLabel.swift in Sources */,
 				89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */,
 				89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */,
 				89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */,
@@ -346,6 +441,7 @@
 				89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */,
 				89A689BA1E306CF30043B9F6 /* Track.swift in Sources */,
 				89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */,
+				89DAC14C1E33AD7600D24A3D /* PopUpController.swift in Sources */,
 				89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +592,7 @@
 		};
 		89CE0A3A1E2E271E00659DE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B2CDA0B02B4521331E4109A /* Pods-SwiftMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YN7W446QN3;
@@ -509,6 +606,7 @@
 		};
 		89CE0A3B1E2E271E00659DE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09736CC14B59BFD683687A74 /* Pods-SwiftMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YN7W446QN3;

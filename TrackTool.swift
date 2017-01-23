@@ -91,6 +91,32 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
         playTrack(track: track)
     }
     
+    func previousTrack() {
+        trackIndex -= 1
+        let track = tracks[trackIndex]
+        playTrack(track: track)
+    }
+    
+    func setProgress(currentProgress : CGFloat) {
+        let progress = (trackPlayer?.currentTime)! / (trackPlayer?.duration)!
+        
+        if CGFloat(progress) == currentProgress {
+            return
+        }
+        let duration = trackPlayer?.duration
+        trackPlayer?.currentTime = TimeInterval(currentProgress) * duration!
+    }
+    
+    func setButtonImage(button: UIButton) {
+        //let track = TrackTool.shareInstance.getTrackMessage()
+        
+        if track.isPlaying {
+            return button.setImage(UIImage(named: "pausebtn"), for: .normal)
+        } else {
+           return button.setImage(UIImage(named: "playbtn"), for: .normal)
+        }
+    }
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: trackFinish), object: self, userInfo: nil)
     }

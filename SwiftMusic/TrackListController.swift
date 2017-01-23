@@ -12,17 +12,17 @@ import AVFoundation
 class TrackListController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var refreshControl: UIRefreshControl!
-    @IBOutlet weak var currentTrack: UILabel!
-    @IBOutlet weak var currentArtist: UILabel!
+    @IBOutlet weak var currentTrack: MarqueeLabel!
+    @IBOutlet weak var currentArtist: MarqueeLabel!
     @IBOutlet weak var currentImage: UIImageView!
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var nowPlayingView: UIView!
-    
+    var firstTime = true
     var nowPlaying : CADisplayLink?
-    
     var tracks = [Track]()
+    var timer = Timer()
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -47,7 +47,13 @@ class TrackListController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Music"
+        setupUILabelScrolling()
         
+        if !firstTime {
+            updateTrackMessage()
+            setupProgressView()
+            TrackTool.shareInstance.setButtonImage(button: playPauseBtn)
+        }
         // If a station has been selected, create "Now Playing" button to get back to current station
         /*if !firstTime {
             createNowPlayingBarButton()
@@ -106,13 +112,9 @@ class TrackListController: UIViewController {
         }
     }
     
-    // MARK: - ProgressView Setting
+    // MARK: - Setup ProgressView
     func setupProgressView() {
-        
-//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
-//        //let progressValue = Float(track1.costTime / track1.totalTime)
-//        progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: false)
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             timer in
             let track = TrackTool.shareInstance.getTrackMessage()
             print("isPlaying \(track.isPlaying)")
@@ -132,21 +134,33 @@ class TrackListController: UIViewController {
         }
     }
     
-    // MARK: - IBActions
-    @IBAction func playPause(_ sender: AnyObject) {
-        let button : UIButton = sender as! UIButton
-        button.isSelected = !sender.isSelected
+    func setupUILabelScrolling() {
+        // Setup auto scrolling for UILabel
+        currentTrack.type = .continuous
+        currentTrack.speed = .duration(12.0)
+        currentTrack.fadeLength = 18.0
         
-        if button.isSelected {
-            //self.resumeForeImageViewAnimation()
-            playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
-            TrackTool.shareInstance.playCurrnetTrack()
-            //nowPlaying?.isPaused = false
-        } else {
+        currentArtist.type = .continuous
+        currentArtist.speed = .duration(12.0)
+        currentArtist.fadeLength = 18.0
+    }
+    
+    // MARK: - IBActions
+    @IBAction func playPause(_ sender: Any) {
+        let track = TrackTool.shareInstance.getTrackMessage()
+        
+        if track.isPlaying {
             //self.pauseForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "playbtn"), for: .normal)
             TrackTool.shareInstance.pauseTrack()
+            timer.invalidate()
             //nowPlaying?.isPaused = true
+        } else {
+            //self.resumeForeImageViewAnimation()
+            playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
+            TrackTool.shareInstance.playCurrnetTrack()
+            setupProgressView()
+            //nowPlaying?.isPaused = false
         }
     }
     
@@ -154,6 +168,10 @@ class TrackListController: UIViewController {
         playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
         TrackTool.shareInstance.nextTrack()
         updateTrackMessage()
+    }
+    
+    @IBAction func showPopUp(_ sender: Any) {
+        //timer.invalidate()
     }
 }
 
@@ -201,7 +219,7 @@ extension TrackListController {
         let message = TrackTool.shareInstance.getTrackMessage()
         
         // Checking track model make sure is not empty
-        guard  message.trackModel != nil else {
+        guard message.trackModel != nil else {
             return
         }
         
@@ -215,9 +233,19 @@ extension TrackListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        
         let track = tracks[indexPath.row]
         TrackTool.shareInstance.playTrack(track: track)
         updateTrackMessage()
         setupProgressView()
+        if firstTime {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.nowPlayingView.isHidden = false
+                self.nowPlayingView.center.x += self.view.bounds.width
+                self.firstTime = false
+                print("NX", self.nowPlayingView.center.x)
+                
+            })
+        }
     }
 }
