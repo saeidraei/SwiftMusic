@@ -150,7 +150,6 @@
                                         </constraints>
                                         <connections>
                                             <action selector="showPopUp:" destination="OzQ-mY-bYs" eventType="touchUpInside" id="zML-tv-6h0"/>
-                                            <segue destination="Nn3-5j-7uI" kind="presentation" identifier="NowPlaying" id="Tjx-yT-79e"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,6 +205,7 @@
                         <outlet property="playPauseBtn" destination="LjL-l1-dp7" id="qkX-ks-O5i"/>
                         <outlet property="progressBar" destination="513-hv-SIo" id="pRw-kK-rCC"/>
                         <outlet property="tableView" destination="9G9-EF-rqL" id="aWh-D5-6Bm"/>
+                        <segue destination="Nn3-5j-7uI" kind="presentation" identifier="NowPlaying" id="mie-4Q-aw4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmZ-FS-5R7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +329,13 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-2f-7iN">
                                 <rect key="frame" x="0.0" y="80" width="414" height="461"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-5T-2ac">
+                                        <rect key="frame" x="15" y="23" width="382" height="406"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1890654293" green="0.20360699530000001" blue="0.24085283099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="461" id="0pa-cc-nZg"/>
                                     <constraint firstAttribute="width" constant="414" id="cjs-ac-4NX"/>
@@ -350,6 +356,7 @@
                             <constraint firstItem="ozD-2f-7iN" firstAttribute="top" secondItem="RTv-Cr-sLG" secondAttribute="bottom" id="oau-5e-is4"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="artist" destination="Z0q-rI-Yb8" id="Gyi-CN-gLr"/>
                         <outlet property="currentTime" destination="Slz-ff-EQR" id="Q1B-Sz-yMZ"/>
@@ -366,6 +373,7 @@
     </scenes>
     <resources>
         <image name="albumArt" width="180" height="180"/>
+        <image name="background" width="320" height="568"/>
         <image name="closeBtn" width="180" height="180"/>
         <image name="nextbtn" width="180" height="180"/>
         <image name="pausebtn" width="180" height="180"/>

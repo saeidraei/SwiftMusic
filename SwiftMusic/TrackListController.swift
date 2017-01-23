@@ -53,6 +53,11 @@ class TrackListController: UIViewController {
             updateTrackMessage()
             setupProgressView()
             TrackTool.shareInstance.setButtonImage(button: playPauseBtn)
+            
+            let track = TrackTool.shareInstance.getTrackMessage()
+            if track.isPlaying {
+                startProgressTimer()
+            }
         }
         // If a station has been selected, create "Now Playing" button to get back to current station
         /*if !firstTime {
@@ -113,11 +118,17 @@ class TrackListController: UIViewController {
     }
     
     // MARK: - Setup ProgressView
+    
     func setupProgressView() {
+        let track = TrackTool.shareInstance.getTrackMessage()
+        progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: false)
+    }
+    
+    func startProgressTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             timer in
             let track = TrackTool.shareInstance.getTrackMessage()
-            print("isPlaying \(track.isPlaying)")
+            print("Main Timer!")
             if track.isPlaying {
                 print(track.currentTime, track.totalTime)
                 self.progressBar.setProgress(Float(track.currentTime / track.totalTime), animated: true)
@@ -171,7 +182,8 @@ class TrackListController: UIViewController {
     }
     
     @IBAction func showPopUp(_ sender: Any) {
-        //timer.invalidate()
+        timer.invalidate()
+        self.performSegue(withIdentifier: "NowPlaying", sender: nil)
     }
 }
 
@@ -238,6 +250,7 @@ extension TrackListController: UITableViewDelegate {
         TrackTool.shareInstance.playTrack(track: track)
         updateTrackMessage()
         setupProgressView()
+        startProgressTimer()
         if firstTime {
             UIView.animate(withDuration: 1.0, animations: {
                 self.nowPlayingView.isHidden = false

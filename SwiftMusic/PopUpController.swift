@@ -15,17 +15,21 @@ class PopUpController: UIViewController {
     @IBOutlet weak var finishTime: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var playPauseBtn: UIButton!
-    var timer = Timer()
+    var popupTimer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("POPUP Did LOAD")
         setupTrackDetails()
+        progressTimer()
+        setupProgressSlider()
         TrackTool.shareInstance.setButtonImage(button: playPauseBtn)
     }
     
     // MARK: - IBActions
     @IBAction func closeButtonPressed(_ sender: Any) {
+        print("Closed!!")
+        popupTimer.invalidate()
         dismiss(animated: true, completion: nil)
     }
     
@@ -35,14 +39,13 @@ class PopUpController: UIViewController {
         if track.isPlaying {
             //self.pauseForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "playbtn"), for: .normal)
+            //popupTimer.invalidate()
             TrackTool.shareInstance.pauseTrack()
-            timer.invalidate()
             //nowPlaying?.isPaused = true
         } else {
             //self.resumeForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
             TrackTool.shareInstance.playCurrnetTrack()
-            setupProgressSlider()
             //nowPlaying?.isPaused = false
         }
 
@@ -50,9 +53,11 @@ class PopUpController: UIViewController {
     
     @IBAction func changeProgressValue(_ sender: UISlider) {
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        progressSlider.value = sender.value
-        print("VALUE: \(progressSlider.value)")
-        TrackTool.shareInstance.setProgress(currentProgress: CGFloat(self.progressSlider.value))
+        //if currentTrack.isPlaying {
+            progressSlider.value = sender.value
+            print("VALUE: \(progressSlider.value)")
+            TrackTool.shareInstance.setProgress(currentProgress: CGFloat(self.progressSlider.value))
+        //}
     }
     
     
@@ -69,17 +74,21 @@ class PopUpController: UIViewController {
     }
     
     // MARK: - Setup Progress Slider
+    
     func setupProgressSlider() {
         let track = TrackTool.shareInstance.getTrackMessage()
         progressSlider.value = Float(track.currentTime / track.totalTime)
         currentTime.text = TimeFormat.getFormatTime(timerInval: track.currentTime)
         finishTime.text = "-\(TimeFormat.getFormatTime(timerInval: (track.totalTime - track.currentTime)))"
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
+    }
+    
+    func progressTimer() {
+        popupTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             timer in
-            
-            print("isPlaying \(track.isPlaying)")
+            let track = TrackTool.shareInstance.getTrackMessage()
+            print("Detail Timer!")
             if track.isPlaying {
+                print(track.currentTime, track.totalTime)
                 self.progressSlider.value = Float(track.currentTime / track.totalTime)
                 self.currentTime.text = TimeFormat.getFormatTime(timerInval: track.currentTime)
                 self.finishTime.text = "-\(TimeFormat.getFormatTime(timerInval: (track.totalTime - track.currentTime)))"
@@ -106,7 +115,5 @@ class PopUpController: UIViewController {
         artist.type = .continuous
         artist.speed = .duration(12.0)
         artist.fadeLength = 15.0
-        
-        setupProgressSlider()
     }
 }
