@@ -90,7 +90,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRD-Hc-dDU">
                                 <rect key="frame" x="0.0" y="674" width="414" height="62"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="albumArt" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-KT-Yyc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artwork" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-KT-Yyc">
                                         <rect key="frame" x="0.0" y="2" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="gIC-sI-dk1"/>
@@ -330,8 +330,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-2f-7iN">
                                 <rect key="frame" x="0.0" y="80" width="414" height="461"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-5T-2ac">
-                                        <rect key="frame" x="15" y="23" width="382" height="406"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="artwork" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-5T-2ac">
+                                        <rect key="frame" x="37" y="54" width="341" height="353"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -363,6 +363,7 @@
                         <outlet property="finishTime" destination="UvC-vO-E4H" id="gZl-RE-8bC"/>
                         <outlet property="playPauseBtn" destination="1wj-7m-YAj" id="9Af-cr-az2"/>
                         <outlet property="progressSlider" destination="5AY-3U-iEl" id="f2D-bG-LqX"/>
+                        <outlet property="trackImage" destination="bYe-5T-2ac" id="nhI-1m-eOR"/>
                         <outlet property="trackTitle" destination="Oaa-Ns-9Js" id="5LB-5I-DgG"/>
                     </connections>
                 </viewController>
@@ -372,8 +373,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="albumArt" width="180" height="180"/>
-        <image name="background" width="320" height="568"/>
+        <image name="artwork" width="400" height="350"/>
         <image name="closeBtn" width="180" height="180"/>
         <image name="nextbtn" width="180" height="180"/>
         <image name="pausebtn" width="180" height="180"/>

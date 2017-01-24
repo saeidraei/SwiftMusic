@@ -18,7 +18,6 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
     var tracks: [Track] = [Track]()
     var trackIndex = -1 {
         didSet {
-            print("SASASASSASASASASASAS")
             if trackIndex < 0 {
                 trackIndex = tracks.count - 1
             }
@@ -74,27 +73,32 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
 
         trackPlayer?.prepareToPlay()
         trackPlayer?.play()
+        setupLockScreen()
     }
     
     func playCurrnetTrack () {
         let track = tracks[trackIndex]
         playTrack(track: track)
+        setupLockScreen()
     }
     
     func pauseTrack() -> () {
         trackPlayer?.pause()
+        setupLockScreen()
     }
     
     func nextTrack() {
         trackIndex += 1
         let track = tracks[trackIndex]
         playTrack(track: track)
+        setupLockScreen()
     }
     
     func previousTrack() {
         trackIndex -= 1
         let track = tracks[trackIndex]
         playTrack(track: track)
+        setupLockScreen()
     }
     
     func setProgress(currentProgress : CGFloat) {
@@ -105,6 +109,7 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
         }
         let duration = trackPlayer?.duration
         trackPlayer?.currentTime = TimeInterval(currentProgress) * duration!
+        setupLockScreen()
     }
     
     func setButtonImage(button: UIButton) {
@@ -119,5 +124,50 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: trackFinish), object: self, userInfo: nil)
+    }
+}
+
+extension TrackTool {
+    func setupLockScreen() {
+        //let socket = true
+        let lockMsg = getTrackMessage()
+        let centerInfo = MPNowPlayingInfoCenter.default()
+        
+        //标题
+        let title = lockMsg.trackModel?.title ?? ""
+        let artist = lockMsg.trackModel?.artist ?? ""
+        var image: UIImage
+        
+        if lockMsg.trackModel?.artwork == nil {
+            image = UIImage(named: "artwork")!
+        } else {
+            image = UIImage(data: (lockMsg.trackModel?.artwork)!)!
+        }
+        
+        let artwork = MPMediaItemArtwork.init(boundsSize: (image.size), requestHandler: { (size) -> UIImage in
+            return image
+        })
+        let currentTime = lockMsg.currentTime
+        let totalTime = lockMsg.totalTime
+        
+        var playRate: NSNumber = 0
+        
+        if lockMsg.isPlaying {
+            playRate = 1.0
+        }
+        
+        //let iconName = message.modelM?.singerIcon ?? ""
+        
+        
+        centerInfo.nowPlayingInfo = [
+            MPMediaItemPropertyTitle: title,
+            MPMediaItemPropertyArtist: artist,
+            MPMediaItemPropertyArtwork: artwork,
+            MPNowPlayingInfoPropertyElapsedPlaybackTime: currentTime,
+            MPMediaItemPropertyPlaybackDuration: totalTime,
+            MPNowPlayingInfoPropertyPlaybackRate: playRate
+        ]
+
+        UIApplication.shared.beginReceivingRemoteControlEvents()
     }
 }

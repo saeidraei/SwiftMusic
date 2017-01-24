@@ -12,13 +12,13 @@ class Track: NSObject {
     var title: String
     var artist: String
     var fileName: String
-    //var artwork: UIImage?
+    var artwork: Data?
     
-    init(title: String, artist: String, fileName: String) {
+    init(title: String, artist: String, fileName: String, artwork: Data?) {
         self.title = title
         self.artist = artist
         self.fileName = fileName
-        //self.artwork = artwork
+        self.artwork = artwork
         super.init()
     }
 }

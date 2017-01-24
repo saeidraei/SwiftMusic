@@ -24,12 +24,10 @@ class TrackListController: UIViewController {
     var tracks = [Track]()
     var timer = Timer()
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
+        print("View Did LOAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        
         super.viewDidLoad()
         //nowPlaying?.isPaused = true
         nowPlayingView.isHidden = true
@@ -42,12 +40,15 @@ class TrackListController: UIViewController {
         setupPullToRefresh()
         
         // Auto play next track when current track is finish
-        NotificationCenter.default.addObserver(self, selector: #selector(nextTrack(_:)), name: NSNotification.Name(rawValue: trackFinish), object: self)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Music"
+        print("View will Appear  ============================!")
         setupUILabelScrolling()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nextTrack(_:)), name: NSNotification.Name(rawValue: trackFinish), object: nil)
         
         if !firstTime {
             updateTrackMessage()
@@ -127,6 +128,7 @@ class TrackListController: UIViewController {
     func startProgressTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             timer in
+            
             let track = TrackTool.shareInstance.getTrackMessage()
             print("Main Timer!")
             if track.isPlaying {
@@ -171,6 +173,7 @@ class TrackListController: UIViewController {
             playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
             TrackTool.shareInstance.playCurrnetTrack()
             setupProgressView()
+            startProgressTimer()
             //nowPlaying?.isPaused = false
         }
     }
@@ -179,10 +182,15 @@ class TrackListController: UIViewController {
         playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
         TrackTool.shareInstance.nextTrack()
         updateTrackMessage()
+        setupProgressView()
+        startProgressTimer()
     }
     
     @IBAction func showPopUp(_ sender: Any) {
         timer.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
+        
         self.performSegue(withIdentifier: "NowPlaying", sender: nil)
     }
 }
@@ -237,6 +245,14 @@ extension TrackListController {
         
         currentTrack.text = message.trackModel?.title
         currentArtist.text = message.trackModel?.artist
+        //currentImage.image = UIImage(data: (message.trackModel?.artwork)!) ?? UIImage(named: "")
+        
+        if message.trackModel?.artwork == nil{
+            currentImage.image = UIImage(named: "artwork")
+        } else {
+            currentImage.image = UIImage(data: (message.trackModel?.artwork)!)
+        }
+        
     }
 }
 
@@ -250,15 +266,57 @@ extension TrackListController: UITableViewDelegate {
         TrackTool.shareInstance.playTrack(track: track)
         updateTrackMessage()
         setupProgressView()
-        startProgressTimer()
+        
         if firstTime {
             UIView.animate(withDuration: 1.0, animations: {
                 self.nowPlayingView.isHidden = false
                 self.nowPlayingView.center.x += self.view.bounds.width
                 self.firstTime = false
                 print("NX", self.nowPlayingView.center.x)
-                
+                self.startProgressTimer()
             })
         }
     }
 }
+
+extension TrackListController {
+    override func remoteControlReceived(with event: UIEvent?) {
+        //let type = event?.subtype
+        
+        guard let event = event else {
+            print("No event")
+            return
+        }
+        
+        guard event.type == UIEventType.remoteControl else {
+            print("Received other control type")
+            return
+        }
+        
+        switch event.subtype {
+        case UIEventSubtype.remoteControlPlay:
+            print("play")
+            TrackTool.shareInstance.playCurrnetTrack()
+        case UIEventSubtype.remoteControlPause:
+            TrackTool.shareInstance.pauseTrack()
+            //timer.invalidate()
+            print("pause")
+        case UIEventSubtype.remoteControlNextTrack:
+            TrackTool.shareInstance.nextTrack()
+            print("next")
+        case UIEventSubtype.remoteControlPreviousTrack:
+            TrackTool.shareInstance.previousTrack()
+            print("previous")
+        default:
+            print("")
+        }
+        updateTrackMessage()
+    }
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        TrackTool.shareInstance.nextTrack()
+        updateTrackMessage()
+    }
+}
+
+

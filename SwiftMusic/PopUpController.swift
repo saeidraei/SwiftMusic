@@ -11,6 +11,7 @@ import UIKit
 class PopUpController: UIViewController {
     @IBOutlet weak var trackTitle: MarqueeLabel!
     @IBOutlet weak var artist: MarqueeLabel!
+    @IBOutlet weak var trackImage: UIImageView!
     @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var finishTime: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
@@ -24,6 +25,10 @@ class PopUpController: UIViewController {
         progressTimer()
         setupProgressSlider()
         TrackTool.shareInstance.setButtonImage(button: playPauseBtn)
+        NotificationCenter.default.removeObserver(self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nextTrack(_:)), name: NSNotification.Name(rawValue: trackFinish), object: nil)
+        
     }
     
     // MARK: - IBActions
@@ -86,6 +91,10 @@ class PopUpController: UIViewController {
         popupTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) {
             timer in
             let track = TrackTool.shareInstance.getTrackMessage()
+            let status = UIApplication.shared.applicationState
+            if status == .background {
+                
+            }
             print("Detail Timer!")
             if track.isPlaying {
                 print(track.currentTime, track.totalTime)
@@ -100,20 +109,67 @@ class PopUpController: UIViewController {
     
     // MARK: - Setup track detail
     func setupTrackDetails() {
-        let message = TrackTool.shareInstance.getTrackMessage()
+        let track = TrackTool.shareInstance.getTrackMessage()
         
-        guard message.trackModel != nil else{
+        guard track.trackModel != nil else{
             return
         }
         
-        trackTitle.text = message.trackModel?.title
+        trackTitle.text = track.trackModel?.title
         trackTitle.type = .continuous
         trackTitle.speed = .duration(12.0)
         trackTitle.fadeLength = 15.0
         
-        artist.text = message.trackModel?.artist
+        artist.text = track.trackModel?.artist
         artist.type = .continuous
         artist.speed = .duration(12.0)
         artist.fadeLength = 15.0
+        
+        if track.trackModel?.artwork == nil {
+            trackImage.image = UIImage(named: "artwork")
+        } else {
+            trackImage.image = UIImage(data: (track.trackModel?.artwork)!)
+        }
+        
     }
 }
+
+extension PopUpController {
+    override func remoteControlReceived(with event: UIEvent?) {
+        //let type = event?.subtype
+        
+        guard let event = event else {
+            print("No event")
+            return
+        }
+        
+        guard event.type == UIEventType.remoteControl else {
+            print("Received other control type")
+            return
+        }
+        
+        switch event.subtype {
+        case UIEventSubtype.remoteControlPlay:
+            print("play")
+            TrackTool.shareInstance.playCurrnetTrack()
+        case UIEventSubtype.remoteControlPause:
+            TrackTool.shareInstance.pauseTrack()
+            print("pause")
+        case UIEventSubtype.remoteControlNextTrack:
+            TrackTool.shareInstance.nextTrack()
+            print("next")
+        case UIEventSubtype.remoteControlPreviousTrack:
+            TrackTool.shareInstance.previousTrack()
+            print("previous")
+        default:
+            print("")
+        }
+        setupTrackDetails()
+    }
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        TrackTool.shareInstance.nextTrack()
+        setupTrackDetails()
+    }
+}
+

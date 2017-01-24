@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; };
-		89A689B71E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */; };
 		89A689BA1E306CF30043B9F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689B91E306CF30043B9F6 /* Track.swift */; };
 		89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BB1E306EC70043B9F6 /* TrackModel.swift */; };
 		89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BE1E307D8B0043B9F6 /* TrackListController.swift */; };
-		89A689C51E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */; };
-		89A689C61E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */; };
-		89A689C71E30BC710043B9F6 /* 薛之谦 - 演员.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */; };
 		89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689C91E3109070043B9F6 /* TrackTool.swift */; };
 		89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */; };
 		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
@@ -26,6 +22,11 @@
 		89CE0A2A1E2E271E00659DE9 /* SwiftMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A291E2E271E00659DE9 /* SwiftMusicTests.swift */; };
 		89CE0A351E2E271E00659DE9 /* SwiftMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */; };
 		89D568741E35C03A00F3C4AD /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D568731E35C03A00F3C4AD /* TimeFormat.swift */; };
+		89D568761E3632E200F3C4AD /* Shape Of You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89D568751E3632E200F3C4AD /* Shape Of You.mp3 */; };
+		89D5687A1E363D5700F3C4AD /* Dont Wanna Know.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89D568791E363D5700F3C4AD /* Dont Wanna Know.mp3 */; };
+		89D5687C1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89D5687B1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 */; };
+		89D5687E1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89D5687D1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 */; };
+		89D568801E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89D5687F1E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 */; };
 		89DAC14A1E33A55700D24A3D /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */; };
 		89DAC14C1E33AD7600D24A3D /* PopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DAC14B1E33AD7600D24A3D /* PopUpController.swift */; };
 /* End PBXBuildFile section */
@@ -49,13 +50,9 @@
 
 /* Begin PBXFileReference section */
 		09736CC14B59BFD683687A74 /* Pods-SwiftMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic.release.xcconfig"; sourceTree = "<group>"; };
-		89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Machine Gun Kelly, Camila Cabello - Bad Things.mp3"; sourceTree = "<group>"; };
 		89A689B91E306CF30043B9F6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		89A689BB1E306EC70043B9F6 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		89A689BE1E307D8B0043B9F6 /* TrackListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListController.swift; sourceTree = "<group>"; };
-		89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "孙子涵 - 唐人.mp3"; sourceTree = "<group>"; };
-		89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "林宥嘉-残酷月光.mp3"; sourceTree = "<group>"; };
-		89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "薛之谦 - 演员.mp3"; sourceTree = "<group>"; };
 		89A689C91E3109070043B9F6 /* TrackTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTool.swift; sourceTree = "<group>"; };
 		89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMessage.swift; sourceTree = "<group>"; };
 		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
@@ -73,6 +70,11 @@
 		89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMusicUITests.swift; sourceTree = "<group>"; };
 		89CE0A361E2E271E00659DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D568731E35C03A00F3C4AD /* TimeFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
+		89D568751E3632E200F3C4AD /* Shape Of You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Shape Of You.mp3"; sourceTree = "<group>"; };
+		89D568791E363D5700F3C4AD /* Dont Wanna Know.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dont Wanna Know.mp3"; sourceTree = "<group>"; };
+		89D5687B1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Chainsmokers - Dont Let Me Down ft. Daya.mp3"; sourceTree = "<group>"; };
+		89D5687D1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ariana Grande - Side To Side ft. Nicki Minaj.mp3"; sourceTree = "<group>"; };
+		89D5687F1E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "DJ Snake ft. Justin Bieber - Let Me Love You.mp3"; sourceTree = "<group>"; };
 		89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		89DAC14B1E33AD7600D24A3D /* PopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpController.swift; sourceTree = "<group>"; };
 		8B2CDA0B02B4521331E4109A /* Pods-SwiftMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,10 +157,11 @@
 		89B099181E2E69F100EC8F7F /* Tracks */ = {
 			isa = PBXGroup;
 			children = (
-				89A689B61E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 */,
-				89A689C21E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 */,
-				89A689C31E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 */,
-				89A689C41E30BC710043B9F6 /* 薛之谦 - 演员.mp3 */,
+				89D5687F1E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 */,
+				89D5687B1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 */,
+				89D5687D1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 */,
+				89D568751E3632E200F3C4AD /* Shape Of You.mp3 */,
+				89D568791E363D5700F3C4AD /* Dont Wanna Know.mp3 */,
 			);
 			name = Tracks;
 			path = ..;
@@ -313,6 +316,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = YN7W446QN3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					89CE0A241E2E271E00659DE9 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -354,12 +362,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CE0A1F1E2E271E00659DE9 /* LaunchScreen.storyboard in Resources */,
+				89D568761E3632E200F3C4AD /* Shape Of You.mp3 in Resources */,
+				89D5687E1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 in Resources */,
+				89D568801E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 in Resources */,
 				89CE0A1C1E2E271E00659DE9 /* Assets.xcassets in Resources */,
-				89A689B71E3067D10043B9F6 /* Machine Gun Kelly, Camila Cabello - Bad Things.mp3 in Resources */,
-				89A689C61E30BC710043B9F6 /* 林宥嘉-残酷月光.mp3 in Resources */,
+				89D5687C1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 in Resources */,
+				89D5687A1E363D5700F3C4AD /* Dont Wanna Know.mp3 in Resources */,
 				89CE0A1A1E2E271E00659DE9 /* Main.storyboard in Resources */,
-				89A689C71E30BC710043B9F6 /* 薛之谦 - 演员.mp3 in Resources */,
-				89A689C51E30BC710043B9F6 /* 孙子涵 - 唐人.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

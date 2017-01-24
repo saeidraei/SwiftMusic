@@ -29,13 +29,12 @@ class TrackModel: NSObject {
             var tracks = [Track]()
             var title:String = ""
             var artist:String = ""
+            var artwork: Data? = nil
             
             for path in fileFromBundle {
-                print("1")
                 let audioPath = Bundle.main.url(forResource: path, withExtension: nil)
                 let playerItem = AVPlayerItem(url: audioPath!)
                 let metadataList = playerItem.asset.metadata
-                print("2 \(audioPath)")
                 for item in metadataList {
                     
                     if item.commonKey == nil {
@@ -45,15 +44,21 @@ class TrackModel: NSObject {
                     if let key = item.commonKey, let value = item.value {
                         if key == "title" {
                             title = value as! String
-                            print("title: \(title)")
+                            //print("title: \(title)")
                         }
                         if key == "artist" {
                             artist = value as! String
-                            print("artist: \(artist)")
+                            //print("artist: \(artist)")
+                        }
+                        if key == "artwork" {
+                            artwork = value as? Data
+                            //print("\(artwork)")
+                        } else {
+                            artwork = nil
                         }
                     }
                 }
-                let track = Track(title: title, artist: artist, fileName: path)
+                let track = Track(title: title, artist: artist, fileName: path, artwork: artwork)
                 tracks.append(track)
             }
             print("Tracks: \(tracks.count)")
