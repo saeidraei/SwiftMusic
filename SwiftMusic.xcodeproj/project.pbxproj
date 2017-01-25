@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; };
+		474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		89A689BA1E306CF30043B9F6 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689B91E306CF30043B9F6 /* Track.swift */; };
 		89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BB1E306EC70043B9F6 /* TrackModel.swift */; };
 		89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BE1E307D8B0043B9F6 /* TrackListController.swift */; };
 		89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689C91E3109070043B9F6 /* TrackTool.swift */; };
 		89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */; };
+		89BF31EE1E37A75A00653385 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		89BF31EF1E37A75A00653385 /* Pods_SwiftMusic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
 		89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A141E2E271E00659DE9 /* AppDelegate.swift */; };
 		89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A161E2E271E00659DE9 /* ViewController.swift */; };
@@ -48,13 +50,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		89BF31F01E37A75A00653385 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				89BF31EF1E37A75A00653385 /* Pods_SwiftMusic.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		09736CC14B59BFD683687A74 /* Pods-SwiftMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMusic/Pods-SwiftMusic.release.xcconfig"; sourceTree = "<group>"; };
+		893059EE1E376820004CA5AE /* SwiftMusic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftMusic.entitlements; sourceTree = "<group>"; };
 		89A689B91E306CF30043B9F6 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		89A689BB1E306EC70043B9F6 /* TrackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		89A689BE1E307D8B0043B9F6 /* TrackListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListController.swift; sourceTree = "<group>"; };
 		89A689C91E3109070043B9F6 /* TrackTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTool.swift; sourceTree = "<group>"; };
 		89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMessage.swift; sourceTree = "<group>"; };
+		89AA232A1E377129000DF150 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftMusic-deepnaosafpcprclurgonwrnnxqu/Build/Products/Debug-iphoneos/MarqueeLabel/MarqueeLabel.framework"; sourceTree = "<group>"; };
 		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
 		89CE0A111E2E271E00659DE9 /* SwiftMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A141E2E271E00659DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BF31EE1E37A75A00653385 /* Pods_SwiftMusic.framework in Frameworks */,
 				474A36C4FB2C0C9897830EC8 /* Pods_SwiftMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +138,7 @@
 		7D8C3242DA2CFD92F8357CDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89AA232A1E377129000DF150 /* MarqueeLabel.framework */,
 				C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */,
 			);
 			name = Frameworks;
@@ -192,6 +212,7 @@
 		89CE0A131E2E271E00659DE9 /* SwiftMusic */ = {
 			isa = PBXGroup;
 			children = (
+				893059EE1E376820004CA5AE /* SwiftMusic.entitlements */,
 				89A689BD1E307D690043B9F6 /* Controller */,
 				89CE0A141E2E271E00659DE9 /* AppDelegate.swift */,
 				89CE0A161E2E271E00659DE9 /* ViewController.swift */,
@@ -256,6 +277,7 @@
 				89CE0A0F1E2E271E00659DE9 /* Resources */,
 				F4A947DC605F82F30E60C85F /* [CP] Embed Pods Frameworks */,
 				E46ABDE4D85F0ADB894921D3 /* [CP] Copy Pods Resources */,
+				89BF31F01E37A75A00653385 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,6 +341,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
 							};
 						};
 					};
@@ -605,11 +630,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YN7W446QN3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SwiftMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.K2.SwiftMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -619,11 +646,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YN7W446QN3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SwiftMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.K2.SwiftMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

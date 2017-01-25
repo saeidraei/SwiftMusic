@@ -18,6 +18,7 @@ class PopUpController: UIViewController {
     @IBOutlet weak var playPauseBtn: UIButton!
     var popupTimer = Timer()
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         print("POPUP Did LOAD")
@@ -31,6 +32,10 @@ class PopUpController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+        
     // MARK: - IBActions
     @IBAction func closeButtonPressed(_ sender: Any) {
         print("Closed!!")
