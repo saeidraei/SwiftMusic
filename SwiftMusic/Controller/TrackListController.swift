@@ -26,10 +26,7 @@ class TrackListController: UIViewController {
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
-        print("View Did LOAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        
         super.viewDidLoad()
-        //nowPlaying?.isPaused = true
         nowPlayingView.isHidden = true
         loadTracks()
         TrackTool.shareInstance.tracks = tracks
@@ -38,16 +35,13 @@ class TrackListController: UIViewController {
         tableView.backgroundView = nil
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         setupPullToRefresh()
-        
-        // Auto play next track when current track is finish
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = "Music"
-        print("View will Appear  ============================!")
         setupUILabelScrolling()
         
+        // Auto play next track when current track is finish
         NotificationCenter.default.addObserver(self, selector: #selector(nextTrack(_:)), name: NSNotification.Name(rawValue: trackFinish), object: nil)
         
         if !firstTime {
@@ -60,21 +54,6 @@ class TrackListController: UIViewController {
                 startProgressTimer()
             }
         }
-        // If a station has been selected, create "Now Playing" button to get back to current station
-        /*if !firstTime {
-            createNowPlayingBarButton()
-        }
-        
-        // If a track is playing, display title & artist information and animation
-        if currentTrack != nil && currentTrack!.isPlaying {
-            let title = currentStation!.stationName + ": " + currentTrack!.title + " - " + currentTrack!.artist + "..."
-            stationNowPlayingButton.setTitle(title, for: .normal)
-            nowPlayingAnimationImageView.startAnimating()
-        } else {
-            nowPlayingAnimationImageView.stopAnimating()
-            nowPlayingAnimationImageView.image = UIImage(named: "NowPlayingBars")
-        }*/
-        
     }
     
     // MARK - UI Element
@@ -163,18 +142,14 @@ class TrackListController: UIViewController {
         let track = TrackTool.shareInstance.getTrackMessage()
         
         if track.isPlaying {
-            //self.pauseForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "playbtn"), for: .normal)
             TrackTool.shareInstance.pauseTrack()
             timer.invalidate()
-            //nowPlaying?.isPaused = true
         } else {
-            //self.resumeForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
             TrackTool.shareInstance.playCurrnetTrack()
             setupProgressView()
             startProgressTimer()
-            //nowPlaying?.isPaused = false
         }
     }
     
@@ -214,22 +189,9 @@ extension TrackListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TracksListCell
         
-        
-        
         // Configure the cell...
         let track = tracks[indexPath.row]
         cell.configureTrackCell(track: track)
-        
-        // The UISeachController is active
-        /*if searchController.isActive {
-            let station = searchedStations[indexPath.row]
-            cell.configureStationCell(station: station)
-            
-            // The UISeachController is not active
-        } else {
-            let station = stations[indexPath.row]
-            cell.configureStationCell(station: station)
-        }*/
         return cell
     }
 }
@@ -245,7 +207,6 @@ extension TrackListController {
         
         currentTrack.text = message.trackModel?.title
         currentArtist.text = message.trackModel?.artist
-        //currentImage.image = UIImage(data: (message.trackModel?.artwork)!) ?? UIImage(named: "")
         
         if message.trackModel?.artwork == nil{
             currentImage.image = UIImage(named: "artwork")
@@ -281,7 +242,6 @@ extension TrackListController: UITableViewDelegate {
 
 extension TrackListController {
     override func remoteControlReceived(with event: UIEvent?) {
-        //let type = event?.subtype
         
         guard let event = event else {
             print("No event")

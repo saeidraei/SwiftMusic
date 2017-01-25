@@ -129,11 +129,9 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
 
 extension TrackTool {
     func setupLockScreen() {
-        //let socket = true
         let lockMsg = getTrackMessage()
         let centerInfo = MPNowPlayingInfoCenter.default()
         
-        //标题
         let title = lockMsg.trackModel?.title ?? ""
         let artist = lockMsg.trackModel?.artist ?? ""
         var image: UIImage
@@ -155,9 +153,6 @@ extension TrackTool {
         if lockMsg.isPlaying {
             playRate = 1.0
         }
-        
-        //let iconName = message.modelM?.singerIcon ?? ""
-        
         
         centerInfo.nowPlayingInfo = [
             MPMediaItemPropertyTitle: title,

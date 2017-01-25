@@ -47,29 +47,20 @@ class PopUpController: UIViewController {
         let track = TrackTool.shareInstance.getTrackMessage()
         
         if track.isPlaying {
-            //self.pauseForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "playbtn"), for: .normal)
-            //popupTimer.invalidate()
             TrackTool.shareInstance.pauseTrack()
-            //nowPlaying?.isPaused = true
         } else {
-            //self.resumeForeImageViewAnimation()
             playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
             TrackTool.shareInstance.playCurrnetTrack()
-            //nowPlaying?.isPaused = false
         }
 
     }
     
     @IBAction func changeProgressValue(_ sender: UISlider) {
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        //if currentTrack.isPlaying {
-            progressSlider.value = sender.value
-            print("VALUE: \(progressSlider.value)")
-            TrackTool.shareInstance.setProgress(currentProgress: CGFloat(self.progressSlider.value))
-        //}
+        progressSlider.value = sender.value
+        print("VALUE: \(progressSlider.value)")
+        TrackTool.shareInstance.setProgress(currentProgress: CGFloat(self.progressSlider.value))
     }
-    
     
     @IBAction func nextTrack(_ sender: Any) {
         playPauseBtn.setImage(UIImage(named: "pausebtn"), for: .normal)
@@ -84,7 +75,6 @@ class PopUpController: UIViewController {
     }
     
     // MARK: - Setup Progress Slider
-    
     func setupProgressSlider() {
         let track = TrackTool.shareInstance.getTrackMessage()
         progressSlider.value = Float(track.currentTime / track.totalTime)
@@ -141,10 +131,10 @@ class PopUpController: UIViewController {
 
 extension PopUpController {
     override func remoteControlReceived(with event: UIEvent?) {
-        //let type = event?.subtype
         
         guard let event = event else {
             print("No event")
+            print("")
             return
         }
         

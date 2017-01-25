@@ -11,20 +11,13 @@ import AVFoundation
 
 class TrackModel: NSObject {
     class func getTracks(result : ([Track]) ->()) {
-        //1 获取文件路径
         let doc = Bundle.main.resourcePath!
         let fileManager = FileManager.default
-        
         
         do {
             print("Load Data")
             let fileFromBundle = try fileManager.contentsOfDirectory(atPath: doc).filter{$0.contains(".mp3")}
             print("File: \(fileFromBundle)")
-            
-            /*let file = Bundle.main.resourceURL!
-            let fileURL = try fileManager.contentsOfDirectory(at: file, includingPropertiesForKeys: nil, options: []).filter{$0.pathExtension == "mp3"}
-            print(fileURL)*/
-            
             
             var tracks = [Track]()
             var title:String = ""

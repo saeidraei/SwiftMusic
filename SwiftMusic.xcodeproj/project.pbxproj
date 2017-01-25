@@ -148,54 +148,51 @@
 			isa = PBXGroup;
 			children = (
 				89A689B91E306CF30043B9F6 /* Track.swift */,
-				89A689BB1E306EC70043B9F6 /* TrackModel.swift */,
 				89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */,
+				89A689BB1E306EC70043B9F6 /* TrackModel.swift */,
 			);
-			name = Model;
-			path = ..;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		89A689BD1E307D690043B9F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				89A689BE1E307D8B0043B9F6 /* TrackListController.swift */,
 				89DAC14B1E33AD7600D24A3D /* PopUpController.swift */,
+				89A689BE1E307D8B0043B9F6 /* TrackListController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		89A689C81E3108EE0043B9F6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				89A689C91E3109070043B9F6 /* TrackTool.swift */,
 				89D568731E35C03A00F3C4AD /* TimeFormat.swift */,
+				89A689C91E3109070043B9F6 /* TrackTool.swift */,
 			);
-			name = Tools;
-			path = ..;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		89B099181E2E69F100EC8F7F /* Tracks */ = {
 			isa = PBXGroup;
 			children = (
-				89D5687F1E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 */,
-				89D5687B1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 */,
 				89D5687D1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 */,
-				89D568751E3632E200F3C4AD /* Shape Of You.mp3 */,
+				89D5687F1E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 */,
 				89D568791E363D5700F3C4AD /* Dont Wanna Know.mp3 */,
+				89D568751E3632E200F3C4AD /* Shape Of You.mp3 */,
+				89D5687B1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 */,
 			);
-			name = Tracks;
-			path = ..;
+			path = Tracks;
 			sourceTree = "<group>";
 		};
 		89CE0A081E2E271E00659DE9 = {
 			isa = PBXGroup;
 			children = (
 				89CE0A131E2E271E00659DE9 /* SwiftMusic */,
+				7D8C3242DA2CFD92F8357CDD /* Frameworks */,
+				4EE1C594BF68D531FA9B0AE5 /* Pods */,
+				89CE0A121E2E271E00659DE9 /* Products */,
 				89CE0A281E2E271E00659DE9 /* SwiftMusicTests */,
 				89CE0A331E2E271E00659DE9 /* SwiftMusicUITests */,
-				89CE0A121E2E271E00659DE9 /* Products */,
-				4EE1C594BF68D531FA9B0AE5 /* Pods */,
-				7D8C3242DA2CFD92F8357CDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,19 +209,19 @@
 		89CE0A131E2E271E00659DE9 /* SwiftMusic */ = {
 			isa = PBXGroup;
 			children = (
-				893059EE1E376820004CA5AE /* SwiftMusic.entitlements */,
-				89A689BD1E307D690043B9F6 /* Controller */,
-				89CE0A141E2E271E00659DE9 /* AppDelegate.swift */,
-				89CE0A161E2E271E00659DE9 /* ViewController.swift */,
-				89CE0A181E2E271E00659DE9 /* Main.storyboard */,
 				89CE0A421E2E5F4D00659DE9 /* Cell */,
+				89A689BD1E307D690043B9F6 /* Controller */,
+				89DAC1481E33A53700D24A3D /* Libraries */,
 				89A689B81E306CD70043B9F6 /* Model */,
 				89A689C81E3108EE0043B9F6 /* Tools */,
 				89B099181E2E69F100EC8F7F /* Tracks */,
+				89CE0A141E2E271E00659DE9 /* AppDelegate.swift */,
 				89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */,
-				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
 				89CE0A201E2E271E00659DE9 /* Info.plist */,
-				89DAC1481E33A53700D24A3D /* Libraries */,
+				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
+				89CE0A181E2E271E00659DE9 /* Main.storyboard */,
+				893059EE1E376820004CA5AE /* SwiftMusic.entitlements */,
+				89CE0A161E2E271E00659DE9 /* ViewController.swift */,
 			);
 			path = SwiftMusic;
 			sourceTree = "<group>";
@@ -232,8 +229,8 @@
 		89CE0A281E2E271E00659DE9 /* SwiftMusicTests */ = {
 			isa = PBXGroup;
 			children = (
-				89CE0A291E2E271E00659DE9 /* SwiftMusicTests.swift */,
 				89CE0A2B1E2E271E00659DE9 /* Info.plist */,
+				89CE0A291E2E271E00659DE9 /* SwiftMusicTests.swift */,
 			);
 			path = SwiftMusicTests;
 			sourceTree = "<group>";
@@ -241,8 +238,8 @@
 		89CE0A331E2E271E00659DE9 /* SwiftMusicUITests */ = {
 			isa = PBXGroup;
 			children = (
-				89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */,
 				89CE0A361E2E271E00659DE9 /* Info.plist */,
+				89CE0A341E2E271E00659DE9 /* SwiftMusicUITests.swift */,
 			);
 			path = SwiftMusicUITests;
 			sourceTree = "<group>";
@@ -252,7 +249,7 @@
 			children = (
 				89C672511E2FC61D0064F1ED /* TracksListCell.swift */,
 			);
-			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		89DAC1481E33A53700D24A3D /* Libraries */ = {
@@ -260,8 +257,7 @@
 			children = (
 				89DAC1491E33A55700D24A3D /* MarqueeLabel.swift */,
 			);
-			name = Libraries;
-			path = ..;
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +514,7 @@
 				89CE0A191E2E271E00659DE9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */ = {
@@ -526,6 +523,7 @@
 				89CE0A1E1E2E271E00659DE9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
