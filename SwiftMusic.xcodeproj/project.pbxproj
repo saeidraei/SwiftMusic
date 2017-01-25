@@ -17,7 +17,6 @@
 		89BF31EF1E37A75A00653385 /* Pods_SwiftMusic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
 		89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A141E2E271E00659DE9 /* AppDelegate.swift */; };
-		89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CE0A161E2E271E00659DE9 /* ViewController.swift */; };
 		89CE0A1A1E2E271E00659DE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CE0A181E2E271E00659DE9 /* Main.storyboard */; };
 		89CE0A1C1E2E271E00659DE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */; };
 		89CE0A1F1E2E271E00659DE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */; };
@@ -76,7 +75,6 @@
 		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
 		89CE0A111E2E271E00659DE9 /* SwiftMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A141E2E271E00659DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89CE0A161E2E271E00659DE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		89CE0A191E2E271E00659DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89CE0A1B1E2E271E00659DE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CE0A1E1E2E271E00659DE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				89CE0A1D1E2E271E00659DE9 /* LaunchScreen.storyboard */,
 				89CE0A181E2E271E00659DE9 /* Main.storyboard */,
 				893059EE1E376820004CA5AE /* SwiftMusic.entitlements */,
-				89CE0A161E2E271E00659DE9 /* ViewController.swift */,
 			);
 			path = SwiftMusic;
 			sourceTree = "<group>";
@@ -465,7 +462,6 @@
 				89D568741E35C03A00F3C4AD /* TimeFormat.swift in Sources */,
 				89DAC14A1E33A55700D24A3D /* MarqueeLabel.swift in Sources */,
 				89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */,
-				89CE0A171E2E271E00659DE9 /* ViewController.swift in Sources */,
 				89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */,
 				89CE0A151E2E271E00659DE9 /* AppDelegate.swift in Sources */,
 				89A689BC1E306EC70043B9F6 /* TrackModel.swift in Sources */,
@@ -634,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.K2.SwiftMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -650,7 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.K2.SwiftMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
