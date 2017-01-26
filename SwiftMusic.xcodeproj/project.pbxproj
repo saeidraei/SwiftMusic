@@ -13,6 +13,10 @@
 		89A689BF1E307D8B0043B9F6 /* TrackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689BE1E307D8B0043B9F6 /* TrackListController.swift */; };
 		89A689CA1E3109070043B9F6 /* TrackTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689C91E3109070043B9F6 /* TrackTool.swift */; };
 		89A689CE1E3118FA0043B9F6 /* TrackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */; };
+		89B88D931E39D9CC002C1503 /* ScreenShot1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 89B88D8F1E39D9CC002C1503 /* ScreenShot1.PNG */; };
+		89B88D941E39D9CC002C1503 /* ScreenShot2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 89B88D901E39D9CC002C1503 /* ScreenShot2.PNG */; };
+		89B88D951E39D9CC002C1503 /* ScreenShot3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 89B88D911E39D9CC002C1503 /* ScreenShot3.PNG */; };
+		89B88D961E39D9CC002C1503 /* ScreenShot4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 89B88D921E39D9CC002C1503 /* ScreenShot4.PNG */; };
 		89BF31EE1E37A75A00653385 /* Pods_SwiftMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		89BF31EF1E37A75A00653385 /* Pods_SwiftMusic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C884658BD1B6300AD30AA11B /* Pods_SwiftMusic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		89C672521E2FC61D0064F1ED /* TracksListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C672511E2FC61D0064F1ED /* TracksListCell.swift */; };
@@ -72,6 +76,10 @@
 		89A689C91E3109070043B9F6 /* TrackTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackTool.swift; sourceTree = "<group>"; };
 		89A689CD1E3118FA0043B9F6 /* TrackMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackMessage.swift; sourceTree = "<group>"; };
 		89AA232A1E377129000DF150 /* MarqueeLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MarqueeLabel.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftMusic-deepnaosafpcprclurgonwrnnxqu/Build/Products/Debug-iphoneos/MarqueeLabel/MarqueeLabel.framework"; sourceTree = "<group>"; };
+		89B88D8F1E39D9CC002C1503 /* ScreenShot1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot1.PNG; sourceTree = "<group>"; };
+		89B88D901E39D9CC002C1503 /* ScreenShot2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot2.PNG; sourceTree = "<group>"; };
+		89B88D911E39D9CC002C1503 /* ScreenShot3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot3.PNG; sourceTree = "<group>"; };
+		89B88D921E39D9CC002C1503 /* ScreenShot4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot4.PNG; sourceTree = "<group>"; };
 		89C672511E2FC61D0064F1ED /* TracksListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracksListCell.swift; sourceTree = "<group>"; };
 		89CE0A111E2E271E00659DE9 /* SwiftMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CE0A141E2E271E00659DE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,13 +190,25 @@
 			path = Tracks;
 			sourceTree = "<group>";
 		};
+		89B88D8E1E39D975002C1503 /* ScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				89B88D8F1E39D9CC002C1503 /* ScreenShot1.PNG */,
+				89B88D901E39D9CC002C1503 /* ScreenShot2.PNG */,
+				89B88D911E39D9CC002C1503 /* ScreenShot3.PNG */,
+				89B88D921E39D9CC002C1503 /* ScreenShot4.PNG */,
+			);
+			name = ScreenShots;
+			path = ScreenShots;
+			sourceTree = "<group>";
+		};
 		89CE0A081E2E271E00659DE9 = {
 			isa = PBXGroup;
 			children = (
-				89CE0A131E2E271E00659DE9 /* SwiftMusic */,
 				7D8C3242DA2CFD92F8357CDD /* Frameworks */,
 				4EE1C594BF68D531FA9B0AE5 /* Pods */,
 				89CE0A121E2E271E00659DE9 /* Products */,
+				89CE0A131E2E271E00659DE9 /* SwiftMusic */,
 				89CE0A281E2E271E00659DE9 /* SwiftMusicTests */,
 				89CE0A331E2E271E00659DE9 /* SwiftMusicUITests */,
 			);
@@ -211,6 +231,7 @@
 				89A689BD1E307D690043B9F6 /* Controller */,
 				89DAC1481E33A53700D24A3D /* Libraries */,
 				89A689B81E306CD70043B9F6 /* Model */,
+				89B88D8E1E39D975002C1503 /* ScreenShots */,
 				89A689C81E3108EE0043B9F6 /* Tools */,
 				89B099181E2E69F100EC8F7F /* Tracks */,
 				89CE0A141E2E271E00659DE9 /* AppDelegate.swift */,
@@ -379,10 +400,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B88D961E39D9CC002C1503 /* ScreenShot4.PNG in Resources */,
+				89B88D931E39D9CC002C1503 /* ScreenShot1.PNG in Resources */,
 				89CE0A1F1E2E271E00659DE9 /* LaunchScreen.storyboard in Resources */,
 				89D568761E3632E200F3C4AD /* Shape Of You.mp3 in Resources */,
 				89D5687E1E363E8600F3C4AD /* Ariana Grande - Side To Side ft. Nicki Minaj.mp3 in Resources */,
+				89B88D941E39D9CC002C1503 /* ScreenShot2.PNG in Resources */,
 				89D568801E36425300F3C4AD /* DJ Snake ft. Justin Bieber - Let Me Love You.mp3 in Resources */,
+				89B88D951E39D9CC002C1503 /* ScreenShot3.PNG in Resources */,
 				89CE0A1C1E2E271E00659DE9 /* Assets.xcassets in Resources */,
 				89D5687C1E363E0700F3C4AD /* The Chainsmokers - Dont Let Me Down ft. Daya.mp3 in Resources */,
 				89D5687A1E363D5700F3C4AD /* Dont Wanna Know.mp3 in Resources */,
