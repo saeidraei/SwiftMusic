@@ -54,7 +54,7 @@ class TrackTool: NSObject , AVAudioPlayerDelegate{
         guard let path = Bundle.main.url(forResource: track.fileName, withExtension: nil) else {
             return
         }
-        
+        print("Test Refresh: \(track.fileName)")
         trackIndex = tracks.index(of: track)!
         // Skip if the track is playing
         if trackPlayer?.url == path {

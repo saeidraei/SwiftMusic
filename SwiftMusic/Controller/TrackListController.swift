@@ -29,7 +29,7 @@ class TrackListController: UIViewController {
         super.viewDidLoad()
         nowPlayingView.isHidden = true
         loadTracks()
-        TrackTool.shareInstance.tracks = tracks
+        
         
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = nil
@@ -60,7 +60,7 @@ class TrackListController: UIViewController {
     func setupPullToRefresh() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [NSForegroundColorAttributeName:UIColor.white])
-        self.refreshControl.backgroundColor = UIColor.black
+        //self.refreshControl.backgroundColor = UIColor.black
         self.refreshControl.tintColor = UIColor.white
         self.refreshControl.addTarget(self, action: #selector(TrackListController.refresh), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
@@ -75,7 +75,8 @@ class TrackListController: UIViewController {
         // Refresh Timer
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.refreshControl.endRefreshing()
-            self.view.setNeedsDisplay()
+            //self.tableView.reloadData()
+            //self.view.setNeedsDisplay()
         }
     }
     
@@ -89,7 +90,7 @@ class TrackListController: UIViewController {
                 //let t = tracksData[2]
                 //print("Name: \(t.title), Artist: \(t.artist)")
             }
-            
+            TrackTool.shareInstance.tracks = tracks
             DispatchQueue.main.async(execute: {
                 self.tableView.reloadData()
                 self.view.setNeedsDisplay()
